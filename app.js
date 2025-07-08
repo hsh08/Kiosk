@@ -13,16 +13,6 @@ app.post('/nickname', (req, res) => {
     res.sendStatus(200);
 });
 
-// app.post('/order', (req, res, next) => {
-//     try {
-//         const orderItems = req.body.orderItems;
-//         console.log(orderItems);
-//         res.sendStatus(200);
-//     } catch (error) {
-//         next(error);
-//     }
-// });
-
 app.post('/order', (req, res, next) => {
     try {
         const orderItems = req.body.orderItems;
