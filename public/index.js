@@ -99,52 +99,6 @@ function sendNickname() {
     }
 }
 
-// function sendNickname() {
-//     return new Promise(function(resolve, reject) {
-//         var nicknameInput = document.getElementById('nickname');
-//         var nickname = nicknameInput.value.trim();
-//         if (nickname) {
-//             var xhr = new XMLHttpRequest();
-//             xhr.open("POST", "http://localhost:3000/nickname", true);
-//             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-//             xhr.onload = function() {
-//                 if (xhr.status === 200) {
-//                     resolve();
-//                 } else {
-//                     reject(new Error('Nickname submission failed: ' + xhr.status));
-//                 }
-//             };
-
-//             xhr.onerror = function() {
-//                 reject(new Error('Network error'));
-//             };
-
-//             xhr.send("nickname=" + encodeURIComponent(nickname));
-//         } else {
-//             reject(new Error('Nickname is required'));  // 별명이 입력되지 않은 경우에 Promise를 거부합니다.
-//         }
-//     });
-// }
-
-// function goToNextPage() {
-//     location.href = 'html/main.html';
-// }
-
-// function complex() {
-//     sendNickname()
-//         .then(sendOrder)
-//         .then(goToNextPage)
-//         .catch(function(error) {
-//             if (error.message === 'Nickname is required') {
-//                 alert('별명을 입력해주세요.');
-//                 return Promise.reject(error);  // 별명 입력 오류를 다시 거부합니다.
-//             } else {
-//                 console.error('Failed to send order:', error);
-//             }
-//         });
-// }
-
 function complex() {
     sendNickname();
     sendOrder();
